@@ -28,6 +28,22 @@ export default {
                 console.log(e);
                 return [];
             }
-        }
-    }
-}
+        },
+
+        getAuthorList: async(_, args) => {
+            try{
+                const result = await Author.find().populate({
+                    path : `artList`,
+                    model : Book,
+                })
+                .sort({name : 1});
+
+                return result;
+            }catch(e){
+                console.log(e);
+                return [];
+            }
+        },
+
+    },
+};

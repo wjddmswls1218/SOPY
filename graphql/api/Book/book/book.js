@@ -26,11 +26,28 @@ export default {
                 const result = await Book.findOne({ title },{}).populate({
                     path: `author`,
                     model: Author,
-                });
+                })
             }catch(e) {
                 console.log(e);
                 return {};
             }
         },
-    }
-}
+
+        searchBook : async(_, args) => {
+            const {title} = args;
+
+            try {
+
+
+                const result = await Book.find({ title : {
+                    $regex : `.*${title}.*`
+                } }).sort({price : 1});
+
+                return result;
+            }catch(e){
+                console.log(e);
+                return [];
+            }
+        },
+    },
+};
