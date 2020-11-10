@@ -102,7 +102,7 @@ export default {
                 secret : secret
             })
             
-            if(!user) {
+            if(!loginUser) {
                 throw new Error("Failed To Login!");
             } else {
 

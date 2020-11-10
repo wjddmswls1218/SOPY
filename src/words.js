@@ -13,4 +13,3 @@ export const generateSecretCode = () => {
   console.log(result);
 };
 
-//dfghjkl;lkjhtr45678ijhnuiop
