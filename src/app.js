@@ -7,8 +7,25 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import schema from "../graphql/schema";
 import connect from "../db/mongo";
+import { generateSecretCode } from "./words";
+
+
+
 
 const app = express();
+
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+generateSecretCode()
+
+
+
 
 app.set(`PORT`, process.env.PORT);
 app.use(morgan(`dev`));
